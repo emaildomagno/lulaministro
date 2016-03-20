@@ -16,5 +16,7 @@
     <author href="http://lulaministro.app.sitedomagno.com.br" email="support@sitedomagno.com.br">
         Magno BC
     </author>
+    <!-- Define app icon for each platform. -->
+    <icon src="icon.png" />
 
 </widget>
