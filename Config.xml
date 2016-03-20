@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <widget xmlns   = "http://www.w3.org/ns/widgets"
+        xmlns:gap   = "http://phonegap.com/ns/1.0"
+        id          = "br.com.sitedomagno.app.lulaministro"
+        versionCode = "10" 
+        version     = "1.0.0" >
+
+    <!-- versionCode is optional and Android only -->
+
+    <name>Lula Ministro</name>
+
+    <description>
+        App para informar se o ex-presidente Lula é ministro ou não.
+    </description>
+
+    <author href="http://lulaministro.app.sitedomagno.com.br" email="support@sitedomagno.com.br">
+        Magno BC
+    </author>
+
+</widget>
