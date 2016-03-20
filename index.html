@@ -31,8 +31,9 @@
 <script>
 var app = angular.module('myApp', []);
 app.controller('customersCtrl', function($scope, $http) {
+  var urlOri="http://www.w3schools.com/angular/customers_mysql.php";
   $scope.val = "Teste";
-   $http.get("http://www.w3schools.com/angular/customers_mysql.php")
+   $http.get("http://prototipo.sitedomagno.com.br/workspace/lulaministro/a.php")
    .then(function (response) {
       $scope.names = response.data.records;
    });
