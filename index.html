@@ -1,7 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="language" content="pt-BR"/>
+  <meta http-equiv="Content-Language" content="pt-BR"/>
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/bootstrap-theme.css">
@@ -11,15 +14,39 @@
   <title>Teste</title>
 </head>
 <body>
-  <div class="container">
-    <img class="img-responsive" src="http://lulaeministro.com/assets/images/lula-nao.jpg" alt="Não"> 
-    <div ng-app="myApp" ng-controller="customersCtrl">
-    <h1>{{status}}</h1>
-    <h2>{{numLiminares}}</h2>
-    <h2>{{datAtualizacao}}</h2>
-    <h3>{{numAcessos}}</h3>
-    </div>
-  </div>
+
+
+
+<section id="home">
+    <article class="lula-ministro">
+        <div class="container">
+            <div class="image col-xs-12 col-sm-6 col-md-6">
+                <div class="photo sim">
+                    <img src="img/lula-sim.jpg">
+                </div>
+                <div class="photo nao active">
+                    <img src="img/lula-nao.jpg">
+                </div>
+            </div>
+            <div class="text col-xs-12 col-sm-6 col-md-6">
+                <h3>Neste momento,</h3>
+                <h1>Lula é<br/>Ministro?</h1>
+                <div class="option sim ">
+                    <h2>Sim</h2>
+                </div>
+                <div class="option nao active">
+                    <h2>Não</h2>
+                </div>
+            </div>
+        </div>
+      <div ng-app="myApp" ng-controller="customersCtrl">
+        <h1>{{status}}</h1>
+        <h2>{{numLiminares}}</h2>
+        <h2>{{datAtualizacao}}</h2>
+        <h3>{{numAcessos}}</h3>
+      </div>
+    </article>
+</section>
 
 <script>
 var app = angular.module('myApp', []);
