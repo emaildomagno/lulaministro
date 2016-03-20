@@ -18,6 +18,13 @@
     </ul>
 </div>
 <script>
+$.get("http://prototipo.sitedomagno.com.br/workspace/lulaministro/b.html", function(data) {
+
+       // Add results to HTML
+       //
+       $("#bb").html("<div id='location'>xxx<br /><strong>"+data+"</strong><br />!</div>");
+
+     });
 var App = angular.module('App',[])
           .controller('AppCtrl', function($scope, AppFact) {
             $scope.val = "Testing the Page For CallsBacks";
