@@ -12,34 +12,13 @@
 </head>
 <body>
   <div class="container">
-  <div id="bb"></div>
-  <h2>Image</h2>
   <img class="img-responsive" src="http://lulaeministro.com/assets/images/lula-nao.jpg" alt="Não"> 
-</div>
-  <div ng-controller="AppCtrl">
-    <h1>{{val}}</h1>
-    <h1>{{informacao}}</h1>
-    <ul>
-      <li ng-repeat="person in data">Nome: <span>{{person.fname}}</span> , <span>{{person.lname}}</span></li>
-    </ul>
-</div>
-<script>
-//var App = angular.module('App',[])
-//          .controller('AppCtrl', function($scope, AppFact) {
-//            $scope.val = "Testing the Page For CallsBacks";
-//            AppFact.getData(function(data) {
-//              $scope.data = data;
-//              $.get("http://prototipo.sitedomagno.com.br/workspace/lulaministro/b.html", function(informacao) {
-//                $("#bb").html("<div id='location'>xxx <strong>"+informacao+"</strong>!</div>");
-//                $scope.informacao = informacao;
-//              });
-//            });
-//          })
-//;
-</script>
+  </div>
 
 <div ng-app="myApp" ng-controller="customersCtrl">
  Inicio
+    <h1>{{val}}</h1>
+  <div id="bb">N</div>
 <table>
   <tr ng-repeat="x in names">
     <td>{{ x.Name }}</td>
@@ -53,7 +32,10 @@
 var app = angular.module('myApp', []);
 app.controller('customersCtrl', function($scope, $http) {
    $http.get("http://www.w3schools.com/angular/customers_mysql.php")
-   .then(function (response) {$scope.names = response.data.records;});
+   .then(function (response) {
+      $scope.names = response.data.records;
+      $scope.val = "Teste";
+   });
 });
 </script>
 
