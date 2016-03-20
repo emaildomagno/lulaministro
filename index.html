@@ -12,29 +12,25 @@
 </head>
 <body>
   <div class="container">
-  <img class="img-responsive" src="http://lulaeministro.com/assets/images/lula-nao.jpg" alt="Não"> 
+    <img class="img-responsive" src="http://lulaeministro.com/assets/images/lula-nao.jpg" alt="Não"> 
+    <div ng-app="myApp" ng-controller="customersCtrl">
+    <h1>{{status}}</h1>
+    <h2>{{numLiminares}}</h2>
+    <h2>{{datAtualizacao}}</h2>
+    <h3>{{numAcessos}}</h3>
+    </div>
   </div>
 
-<div ng-app="myApp" ng-controller="customersCtrl">
- Inicio
-    <h1>{{numAcessos}}</h1>
-<table>
-  <tr ng-repeat="x in names">
-    <td>{{ x.Name }}</td>
-    <td>{{ x.Country }}</td>
-  </tr>
-</table>
- 
-</div>
-  
 <script>
 var app = angular.module('myApp', []);
 app.controller('customersCtrl', function($scope, $http) {
   var urlOri="http://www.w3schools.com/angular/customers_mysql.php";
    $http.get("http://prototipo.sitedomagno.com.br/workspace/lulaministro/a.php")
    .then(function (response) {
+      $scope.status = response.data.status;
+      $scope.numLiminares = response.data.numLiminares;
+      $scope.datAtualizacao = response.data.datAtualizacao;
       $scope.numAcessos = response.data.numAcessos;
-      $scope.names = response.data.records;
    });
 });
 </script>
