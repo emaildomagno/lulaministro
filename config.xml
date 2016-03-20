@@ -19,5 +19,5 @@
     <!-- Define app icon for each platform. -->
     <icon src="icon.png" />
      <access origin="http://sitedomagno.com.br" browserOnly="true" />
-     <access origin="http://www.sitedomagno.com.br" browserOnly="true" />
+     <access origin="http://lulaeministro.com" />
 </widget>
