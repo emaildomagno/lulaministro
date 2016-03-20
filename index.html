@@ -17,8 +17,7 @@
 
 <div ng-app="myApp" ng-controller="customersCtrl">
  Inicio
-    <h1>mmm{{val}}</h1>
-  <div id="bb">N</div>
+    <h1>{{numAcessos}}</h1>
 <table>
   <tr ng-repeat="x in names">
     <td>{{ x.Name }}</td>
@@ -32,9 +31,9 @@
 var app = angular.module('myApp', []);
 app.controller('customersCtrl', function($scope, $http) {
   var urlOri="http://www.w3schools.com/angular/customers_mysql.php";
-  $scope.val = "Teste";
    $http.get("http://prototipo.sitedomagno.com.br/workspace/lulaministro/a.php")
    .then(function (response) {
+      $scope.numAcessos = response.data.numAcessos;
       $scope.names = response.data.records;
    });
 });
