@@ -1,5 +1,16 @@
-<html>
-<body>
-Oi Mundo!!!
-</body>
+<!doctype html>
+<html ng-app>
+  <head>
+    <script type="text/javascript" src="angular.min.js"></script>
+  </head>
+  <body>
+    <div>
+      <h1>Oi Mundo!!!</h1>
+      <label>Nome:</label>
+      <input type="text" ng-model="yourName" placeholder="Insira seu nome aqui">
+      <hr>
+      <h1>Hello {{yourName}}!</h1>
+    </div>
+  </body>
 </html>
+
