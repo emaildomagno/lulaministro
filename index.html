@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html ng-app="App">
 <head>
-<script src="js/angular.min.js"></script>
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.js"></script>
-<meta charset="utf-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/bootstrap-theme.css">
+  <script src="js/angular.min.js"></script>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.js"></script>
   <title>Teste</title>
 </head>
 <body>
@@ -32,22 +35,7 @@ var App = angular.module('App',[])
               });
             });
           })
-          .factory('AppFact', function($http) {
-           return {
-             getData: function(successcb) {
-                var url = 'http://prototipo.sitedomagno.com.br/workspace/lulaministro/a.php?callback=JSON_CALLBACK';
-            $http.jsonp(url).
-            success(function(data,status,headers,config) {
-              console.warn(data);
-              successcb(data);
-            }).
-            error(function(data, status,headers, config) {
-              //alert("Status is " + status);
-             
-            });
-             }
-                        };
-          });
+;
 </script>
 
 </body>
