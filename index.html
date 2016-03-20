@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html ng-app="App">
 <head>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.min.js"></script>
+<script src="js/angular.min.js"></script>
   <meta charset="utf-8">
-  <title>JS Bin</title>
+  <title>Teste</title>
 </head>
 <body>
   <div ng-controller="AppCtrl">
     <h1>{{val}}</h1>
     <ul>
-      <li ng-repeat="person in data">f: <span>{{person.fname}}</span> l: <span>{{person.lname}}</span></li>
+      <li ng-repeat="person in data">Nome: <span>{{person.fname}}</span> , <span>{{person.lname}}</span></li>
     </ul>
 </div>
 <script>
