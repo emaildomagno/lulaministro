@@ -24,22 +24,22 @@
     </ul>
 </div>
 <script>
-var App = angular.module('App',[])
-          .controller('AppCtrl', function($scope, AppFact) {
-            $scope.val = "Testing the Page For CallsBacks";
-            AppFact.getData(function(data) {
-              $scope.data = data;
-              $.get("http://prototipo.sitedomagno.com.br/workspace/lulaministro/b.html", function(informacao) {
-                $("#bb").html("<div id='location'>xxx <strong>"+informacao+"</strong>!</div>");
-                $scope.informacao = informacao;
-              });
-            });
-          })
-;
+//var App = angular.module('App',[])
+//          .controller('AppCtrl', function($scope, AppFact) {
+//            $scope.val = "Testing the Page For CallsBacks";
+//            AppFact.getData(function(data) {
+//              $scope.data = data;
+//              $.get("http://prototipo.sitedomagno.com.br/workspace/lulaministro/b.html", function(informacao) {
+//                $("#bb").html("<div id='location'>xxx <strong>"+informacao+"</strong>!</div>");
+//                $scope.informacao = informacao;
+//              });
+//            });
+//          })
+//;
 </script>
 
 <div ng-app="myApp" ng-controller="customersCtrl">
- 
+ Inicio
 <table>
   <tr ng-repeat="x in names">
     <td>{{ x.Name }}</td>
