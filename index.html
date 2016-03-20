@@ -1,32 +1,42 @@
 <!DOCTYPE html>
-<html lang="pt">
-  <head>
-    <meta charset="utf-8">
-</html>
-<html ng-app>
-  <head>
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/bootstrap-theme.css" rel="stylesheet">
-  </head>
-  <body>
-    <div>
-      <h1>Oi Mundo!!!</h1>
-      <label>Nome:</label>
-      <input type="text" ng-model="yourName" placeholder="Insira seu nome aqui">
-      <hr>
-      <h1>Olá {{yourName}}!</h1>
-    </div>
-    <div>
-      <label>Quantas Vezes?</label>
-      <input type="number" ng-model="vezes" placeholder="insira a quantidade de vezes">
-      <hr>
-		<div class="progress">
-			<div class="progress-bar" role="progressbar" aria-valuenow="{{vezes}}" aria-valuemin="0" aria-valuemax="10" style="width: {{vezes}}0%;"><span class="sr-only">3 de 10</span></div>
-		</div>
-    </div>
-	<script type="text/javascript" src="js/angular.min.js"></script>
-    <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.js"></script>
-  </body>
-</html>
+<html ng-app="App">
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.min.js"></script>
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+</head>
+<body>
+  <div ng-controller="AppCtrl">
+    <h1>{{val}}</h1>
+    <ul>
+      <li ng-repeat="person in data">f: <span>{{person.fname}}</span> l: <span>{{person.lname}}</span></li>
+    </ul>
+</div>
+<script>
+var App = angular.module('App',[])
+          .controller('AppCtrl', function($scope, AppFact) {
+            $scope.val = "Testing the Page For CallsBacks";
+            AppFact.getData(function(data) {
+              $scope.data = data;
+            });
+          })
+          .factory('AppFact', function($http) {
+           return {
+             getData: function(successcb) {
+                var url = 'http://prototipo.sitedomagno.com.br/workspace/lulaministro/a.php?callback=JSON_CALLBACK';
+            $http.jsonp(url).
+            success(function(data,status,headers,config) {
+              console.warn(data);
+              successcb(data);
+            }).
+            error(function(data, status,headers, config) {
+              //alert("Status is " + status);
+             
+            });
+             }
+                        };
+          });
+</script>
 
+</body>
+</html>
