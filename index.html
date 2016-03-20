@@ -8,30 +8,28 @@
   <title>Teste</title>
 </head>
 <body>
-<div id="bb">Zzz</div>
   <div class="container">
+  <div id="bb"></div>
   <h2>Image</h2>
-  <img class="img-responsive" src="http://lulaeministro.com/assets/images/lula-nao.jpg" alt="Não" height="300"> 
+  <img class="img-responsive" src="http://lulaeministro.com/assets/images/lula-nao.jpg" alt="Não"> 
 </div>
   <div ng-controller="AppCtrl">
     <h1>{{val}}</h1>
+    <h1>{{informacao}}</h1>
     <ul>
       <li ng-repeat="person in data">Nome: <span>{{person.fname}}</span> , <span>{{person.lname}}</span></li>
     </ul>
 </div>
 <script>
-$.get("http://prototipo.sitedomagno.com.br/workspace/lulaministro/b.html", function(data) {
-
-       // Add results to HTML
-       //
-       $("#bb").html("<div id='location'>xxx<br /><strong>"+data+"</strong><br />!</div>");
-
-     });
 var App = angular.module('App',[])
           .controller('AppCtrl', function($scope, AppFact) {
             $scope.val = "Testing the Page For CallsBacks";
             AppFact.getData(function(data) {
               $scope.data = data;
+              $.get("http://prototipo.sitedomagno.com.br/workspace/lulaministro/b.html", function(informacao) {
+                $("#bb").html("<div id='location'>xxx <strong>"+informacao+"</strong>!</div>");
+                $scope.informacao = informacao;
+              });
             });
           })
           .factory('AppFact', function($http) {
